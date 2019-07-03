@@ -4,7 +4,7 @@ Go
 Use TournamentTracker;
 
 Create table dbo.Tournaments (
-	id int NOT NULL,
+	id int Identity(1,1) NOT NULL,
 	TournamentName nvarchar(200) NOT NULL,
 	EntryFee money NOT NULL
 		Constraint DF_Tournaments_EntryFee Default 0,
@@ -35,14 +35,14 @@ Create table dbo.TournamentPrizes (
 );
 
 Create table dbo.Teams (
-	id int NOT NULL,
+	id int Identity(1,1) NOT NULL,
 	TeamName nvarchar(150) NOT NULL,
 
 	Constraint PK_Teams Primary Key Clustered (id asc)
 );
 
 Create table dbo.TournamentEntries (
-	id int NOT NULL,
+	id int Identity(1,1) NOT NULL,
 	TournamentId int,
 	TeamId int,
 
